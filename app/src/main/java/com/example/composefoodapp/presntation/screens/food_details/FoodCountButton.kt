@@ -26,6 +26,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
@@ -60,7 +61,9 @@ fun FoodCountButton(
     Column(
         modifier = modifier
     ) {
-        var count = 1
+        var count by remember {
+            mutableIntStateOf(0)
+        }
         Text(
             modifier = modifier
                 .alpha(0.50f),
@@ -76,11 +79,13 @@ fun FoodCountButton(
             modifier = modifier,
             verticalAlignment = Alignment.CenterVertically
         ) {
-            IconButton(onClick = {
-                if (count > 0) {
-                    count--
-                }
-            }) {
+            IconButton(
+                onClick = {
+                    if (count > 0) { count-- } },
+                modifier = modifier
+                    .clip(RoundedCornerShape(15.dp))
+                    .background(Color.White)
+            ) {
                 Text(
                     text = "-",
                     style = MaterialTheme.typography.bodyLarge.copy(
@@ -98,9 +103,13 @@ fun FoodCountButton(
                     else Color.Black
                 )
             )
-            IconButton(onClick = {
-                count++
-            }) {
+            IconButton(
+                onClick = { count++ },
+                modifier = modifier
+                    .clip(RoundedCornerShape(15.dp))
+                    .background(Color.White)
+            )
+            {
                 Text(
                     text = "+",
                     style = MaterialTheme.typography.bodyLarge.copy(

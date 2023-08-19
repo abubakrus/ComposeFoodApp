@@ -22,6 +22,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.colorResource
@@ -79,7 +80,7 @@ fun FoodDetails(
                             else Color.Black
                         )
                     )
-                    Spacer(modifier = modifier.height(ExtraMediumSpacing))
+                    Spacer(modifier = modifier.height(ExtraLargeSpacing))
                     Text(
                         modifier = modifier
                             .alpha(0.50f),
@@ -90,6 +91,7 @@ fun FoodDetails(
                             else Color.Black
                         )
                     )
+                    Spacer(modifier = modifier.height(MediumSpacing))
                     Text(
                         text = foodModel.price,
                         style = MaterialTheme.typography.headlineSmall.copy(
@@ -98,12 +100,15 @@ fun FoodDetails(
                             else Color.Black
                         )
                     )
+                    Spacer(modifier = modifier.height(ExtraLargeSpacing))
                     FoodCountButton()
                 }
                 Spacer(modifier = modifier.width(ExtraLargeSpacing))
                 Column(
                     modifier = modifier
-                        .size(300.dp)
+//                        .scale(scaleX = 0.5f, scaleY = 1f)
+                        .size(250.dp)
+
                 ) {
                     AsyncImage(
                         modifier = modifier

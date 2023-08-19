@@ -16,13 +16,14 @@ import com.example.composefoodapp.R
 @Composable
 fun IconComponents(
     modifier: Modifier = Modifier,
-    iconRes:Int
+    iconRes:Int,
 ) {
     Column(
-        modifier = modifier
+        modifier = modifier,
     ) {
         Row {
             Icon(
+
                 painter = painterResource(id = iconRes),
                 contentDescription = null,
                 tint = if (isSystemInDarkTheme()) colorResource(id = R.color.white_grey)

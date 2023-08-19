@@ -1,6 +1,7 @@
 package com.example.composefoodapp.presntation.components
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -33,14 +34,16 @@ import com.example.composefoodapp.presntation.theme.ExtraMediumSpacing
 @Composable
 fun FoodCategoryItemList(
     modifier: Modifier = Modifier,
-    foodModel: List<Food>
+    foodModel: List<Food>,
+    onClick: () -> Unit
 ) {
     LazyRow {
         items(
             items = foodModel,
             key = { data -> data.id }
         ) { foodModel ->
-            FoodCategoryItem(foodModel = foodModel)
+            FoodCategoryItem(foodModel = foodModel,
+                onClick = {})
         }
     }
 }
@@ -48,14 +51,16 @@ fun FoodCategoryItemList(
 @Composable
 fun FoodCategoryItem(
     modifier: Modifier = Modifier.padding(8.dp),
-    foodModel: Food
+    foodModel: Food,
+    onClick:()->Unit
 ) {
     Box(
         modifier = modifier
             .width(180.dp)
             .height(280.dp)
             .clip(RoundedCornerShape(25.dp))
-            .background(color = colorResource(id = R.color.white)),
+            .background(color = colorResource(id = R.color.white))
+            .clickable { onClick },
         contentAlignment = Alignment.Center
     ) {
         Column(

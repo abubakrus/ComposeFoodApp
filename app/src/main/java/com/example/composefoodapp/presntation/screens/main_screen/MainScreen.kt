@@ -1,5 +1,6 @@
 package com.example.composefoodapp.presntation.screens.main_screen
 
+import android.telecom.Call.Details
 import androidx.compose.foundation.background
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Arrangement
@@ -47,14 +48,14 @@ import com.example.composefoodapp.presntation.components.FoodCategoryItem as Foo
 @Preview
 @Composable
 fun MainScreenPreview() {
-    MainScreen(onClick = {})
+    MainScreen(onClickNavigateToDetails = {})
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MainScreen(
     modifier: Modifier = Modifier.background(color = colorResource(id = R.color.white_grey)),
-    onClick: () -> Unit
+    onClickNavigateToDetails: () -> Unit
 ) {
     Box(
         modifier = modifier,
@@ -116,7 +117,8 @@ fun MainScreen(
             Spacer(modifier = modifier.height(ExtraLargeSpacing))
             TitleCategoryFood()
             Spacer(modifier = modifier.height(ExtraLargeSpacing))
-            FoodCategoryItemList(foodModel = FakeData.fakeFoodAll())
+            FoodCategoryItemList(foodModel = FakeData.fakeFoodAll(),
+                onClick = onClickNavigateToDetails)
         }
     }
 }
