@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">ComposeFoodApp</string>
+    <string name="greeting_text">Enjoy your favourite food delicous</string>
+    <string name="price">Price</string>
+    <string name="choice_quantity">Choice quantity</string>
+    <string name="description">Description</string>
+    <string name="order_now">Order Now</string>
+    <string name="add_chart">Add Chart</string>
+    <string name="all">All</string>
+    <string name="healthy_food">Healthy food</string>
+    <string name="junk_food">Junk food</string>
+    <string name="dessert_food">Dessert</string>
+    <string name="rating">4.9</string>
+</resources>
