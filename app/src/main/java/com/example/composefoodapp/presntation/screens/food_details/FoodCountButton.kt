@@ -95,6 +95,7 @@ fun FoodCountButton(
                     )
                 )
             }
+            Spacer(modifier = modifier.width(SmallSpacing))
             Text(
                 text = count.toString(),
                 style = MaterialTheme.typography.bodyLarge.copy(
@@ -103,6 +104,7 @@ fun FoodCountButton(
                     else Color.Black
                 )
             )
+            Spacer(modifier = modifier.width(SmallSpacing))
             IconButton(
                 onClick = { count++ },
                 modifier = modifier
